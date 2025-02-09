@@ -96,13 +96,14 @@ let hero_score=0;//英雄無名分數
 let temp_hide=0;//隱藏分數
 let correction_score=0;//緊急補正分數
 let result_number=0;//計算比賽分數
+let threeFBoss=0;
 
 const correction=document.getElementById("correction");
 correction.addEventListener('input',updateTotalScore);
 
 function comtestscore(){
-    document.getElementById("lastscore1").textContent=game_score+nohole_score+totalScore+black_score+correction_score+specialLevel_score+sand_score+shop_score+temp_result+temp_hide+bingo_score+hide_score+hero_score+result_number;
-    console.log("正在計算總分",game_score,nohole_score,totalScore,black_score,specialLevel_score,sand_score,shop_score,temp_result,bingo_score,hide_score,hero_score,temp_hide,correction_score,result_number);
+    document.getElementById("lastscore1").textContent=game_score+nohole_score+totalScore+black_score+correction_score+specialLevel_score+sand_score+shop_score+temp_result+temp_hide+bingo_score+hide_score+hero_score+result_number+threeFBoss;
+    console.log("正在計算總分",game_score,nohole_score,totalScore,black_score,specialLevel_score,sand_score,shop_score,temp_result,bingo_score,hide_score,hero_score,temp_hide,correction_score,result_number+threeFBoss);
 }
 
 document.getElementById("game_score").addEventListener('input',()=>{
@@ -533,5 +534,36 @@ collapseCheckboxes.forEach(checkbox => {
 });
 function updatecollapseScore(){
     document.getElementById("hide_collapse").textContent=hide_score;
+    comtestscore();
+}
+
+//計算異格三層boss三層boss加分
+const threeFBossCheckboxes = document.querySelectorAll('input[name="3fboss"]');
+// 為每個 checkbox 添加事件監聽器
+threeFBossCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', (event) => {
+        const target = event.target; // 觸發事件的元素
+        const id = target.id; // 獲取 checkbox 的 id
+        const isChecked = target.checked; // 是否被選中
+        const value = parseFloat(target.value) || 0; // 獲取 checkbox 的值，若為空則默認為 0
+
+        console.log(`Checkbox ID: ${id}, Checked: ${isChecked}, Value: ${value}`);
+
+        // 根據 checkbox 的狀態執行相應的邏輯
+        if (isChecked) {
+            console.log(`Checkbox ${id} 被選中，分數增加: ${value}`);
+            threeFBoss += value;
+            updatethreeFBossTotalScore();
+        } else {
+            // 如果 checkbox 被取消選中，執行相應的操作
+            console.log(`Checkbox ${id} 被取消選中，分數減少: ${value}`,);
+            threeFBoss-=value;
+            updatethreeFBossTotalScore();
+
+        }              
+    });
+});
+function updatethreeFBossTotalScore(){
+    document.getElementById('3FBoss').textContent = threeFBoss;
     comtestscore();
 }
