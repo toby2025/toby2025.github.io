@@ -1,0 +1,80 @@
+#player{
+    border-width: 1px;
+    border: 2px solid #777676; 
+    border-radius: 10px; 
+}
+#options{
+    cursor: pointer;
+}
+#player_name{
+    cursor: pointer;
+}
+#money{
+    display:inline-block;
+}
+input{
+    max-width: 50px;
+    display:inline-block;
+}
+#score{
+    margin-top: 20px;
+    border-width: 1px;
+    border: 2px solid #777676; 
+    border-radius: 10px; 
+}
+
+/* Chrome、Safari、Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+button {
+    appearance: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    margin: 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: black;
+    border-image: initial;
+}
+.changecount {
+    font-size: 18px;
+    width: 25px;
+    height:25px;
+}
+.level{
+    width: 15px;
+}
+#lastscore{
+    margin-top: 20px;
+    border-width: 1px;
+    border: 2px solid #777676; 
+    border-radius: 10px; 
+}
+#lastscore1{
+    margin-left: 10px;
+    font-size: 20px;
+}
+#lastscore{
+    height: 100px;
+}
