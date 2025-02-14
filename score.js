@@ -228,7 +228,7 @@ function calculateTotalScore() {
     // 遍歷所有輸入框
     levelInputs.forEach(input => {
         const id = input.id; // 獲取輸入框的 id
-        const value = parseFloat(levelInputs.value) || 0; // 獲取輸入框的值，若為空則默認為 0
+        const value = parseFloat(inputs.value) || 0; // 獲取輸入框的值，若為空則默認為 0
         const levelScore = levelScores[id] || 0; // 獲取該關卡的基礎分數
 
         // 計算該關卡的分數
