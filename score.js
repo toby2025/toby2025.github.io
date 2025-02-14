@@ -75,6 +75,7 @@ const money=document.getElementById("money");
 first_money.addEventListener('input', calculateSum);
 finally_money.addEventListener('input', calculateSum);
 function calculateSum() {
+    console.log("計算取錢");
     const value1 = parseFloat(first_money.value) || 0;
     const value2 = parseFloat(finally_money.value) || 0; 
     const sum = value1-value2;
@@ -227,15 +228,18 @@ function calculateTotalScore() {
     // 遍歷所有輸入框
     levelInputs.forEach(input => {
         const id = input.id; // 獲取輸入框的 id
-        const value = parseFloat(input.value) || 0; // 獲取輸入框的值，若為空則默認為 0
+        const value = parseFloat(levelInputs.value) || 0; // 獲取輸入框的值，若為空則默認為 0
         const levelScore = levelScores[id] || 0; // 獲取該關卡的基礎分數
 
         // 計算該關卡的分數
         if(value>1){
             totalScore +=levelScore+(value-1)*20;
+            console.log("新增"+totalScore+"分");
         }
-        else
+        else{
         totalScore += value * levelScore;
+        console.log("新增"+totalScore+"分");
+        }
     });
 
     // 更新總分顯示
@@ -246,7 +250,7 @@ function calculateTotalScore() {
 function updateTotalScore() {
     console.log("計算緊急總分");
     correction_score=parseFloat(correction.value) || 0;
-    console.log(correction_score,totalScore,black_score);
+    console.log("緊急補正分數"+correction_score,"道中緊急分數"+totalScore,"黑色遺跡緊急"+black_score);
     document.getElementById('hard_score').textContent = totalScore+black_score+correction_score;
     comtestscore();
 }
