@@ -123,6 +123,7 @@ function updateResult(){
     checkboxes.forEach(checkbox =>{
         let value3=parseFloat(checkbox.value);
         if (checkbox.checked){
+            console.log("新增"+value3+"分");
             result_number+=value3;
         }
         result.textContent=result_number;
@@ -350,11 +351,11 @@ const sandFSelect = document.getElementById('sand_F');
 
 // 定義層數對應的分數
 const sandFScoreMap = {
-    1: 120, // 一層的分數
-    2: 100, // 二層的分數
-    3: 80, // 三層的分數
-    4: 60, // 四層的分數
-    5: 40, // 五層的分數
+    1: 406, // 一層的分數
+    2: 50, // 二層的分數
+    3: 50, // 三層的分數
+    4: 20, // 四層的分數
+    5: 20, // 五層的分數
     6: 20  // 六層的分數
 };
 
