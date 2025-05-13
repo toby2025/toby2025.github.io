@@ -1,0 +1,39 @@
+.menutop{
+    background-color: aquamarine;
+}
+.mid{
+    text-align: left;
+}
+
+.ranking{
+    border-color: black;
+    border-style: solid;
+}
+
+.ranking_stock{
+    border-top-style: solid;
+    border-width: 3px;
+    border-top-color: black;
+}
+
+table {
+    width: 700;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+th, td {
+    border: 1px solid;
+    padding: 8px 12px;
+    text-align: center;
+  }
+caption {
+    caption-side: top;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+#messageArea{
+    padding: 10px;
+}
